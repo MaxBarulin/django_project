@@ -1,7 +1,7 @@
 {% extends 'catalog/basic_design.html' %}
 {% load my_tags %}
 
-{% block title %}Главная страница{% endblock %}
+{% block title %}{{ product.name }}{% endblock %}
 
 {% block header %}
 {% include 'catalog/includes/header_menu.html' %}
@@ -24,7 +24,7 @@
                         <h1 class="card-title pricing-card-title">{{ product.price }}$</h1>
                         <ul class="list-unstyled mt-3 mb-4 text-start m-3">
                             <li>- {{ product.category }}</li>
-                            <li>- {{ product.description|truncatechars:250 }}</li>
+                            <li>- {{ product.description|truncatechars:100 }}</li>
                             <li>- Дата создания: {{ product.created_at | date:"d M Y"}}</li>
                             <li>- Последнее обновление: {{ product.updated_at | date:"d M Y"}}</li>
                         </ul>
