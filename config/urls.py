@@ -20,8 +20,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', include('catalog.urls', namespace='catalog')),  # Достаем маршруты страниц из приложения catalog
+    path('blogs/', include('blogs.urls', namespace='blogs'))
 ]
 
 if settings.DEBUG:
